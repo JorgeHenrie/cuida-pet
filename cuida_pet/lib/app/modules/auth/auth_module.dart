@@ -11,7 +11,9 @@ class AuthModule extends Module {
     void routes(RouteManager r) => [
           ChildRoute(
             '/auth',
-            child: (context) => AuthHomePage(),
+            child: (context) => AuthHomePage(
+              authStore: Modular.get(),
+            ),
           ),
         ];
   }
